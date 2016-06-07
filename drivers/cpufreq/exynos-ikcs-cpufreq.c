@@ -276,9 +276,7 @@ static int cpufreq_merge_tables(void)
 			size[CA7] * sizeof(struct cpufreq_frequency_table));
 
 	for (i = size[CA15]; i <= total_sz ; i++) {
-		if (merge_freq_table[i].frequency != CPUFREQ_ENTRY_INVALID &&
-			merge_freq_table[i].frequency <= 1900000 &&
-			merge_freq_table[i].frequency >= 250000)
+		if (merge_freq_table[i].frequency != CPUFREQ_ENTRY_INVALID)
 			merge_freq_table[i].frequency >>= 1;
 	}
 

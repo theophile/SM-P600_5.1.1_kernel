@@ -488,17 +488,17 @@ static const unsigned int asv_voltage_5420_CA15[CPUFREQ_LEVEL_END_CA15] = {
  */
 static const unsigned int exynos5420_max_op_freq_b_evt0[NR_CPUS + 1] = {
 	UINT_MAX,
-//#ifdef CONFIG_EXYNOS5_MAX_CPU_HOTPLUG
+#ifdef CONFIG_EXYNOS5_MAX_CPU_HOTPLUG
 	2100000,
 	2100000,
 	2100000,
 	2100000,
-//#else
-//	1900000,
-//	1900000,
-//	1900000,
-//	1900000,
-//#endif
+#else
+	1900000,
+	1900000,
+	1900000,
+	1900000,
+#endif
 };
 
 /* Minimum memory throughput in megabytes per second */
@@ -526,8 +526,8 @@ static int exynos5420_bus_table_CA15[CPUFREQ_LEVEL_END_CA15] = {
 	800000,	/* 2.2 GHz */
 	800000,	/* 2.1 GHz */
 	800000,	/* 2.0 GHz */
-	800000,	/* 1.9 GHz */
-	800000,	/* 1.8 GHz */
+	733000,	/* 1.9 GHz */
+	733000,	/* 1.8 GHz */
 	733000,	/* 1.7 MHz */
 	733000,	/* 1.6 GHz */
 	667000,	/* 1.5 GHz */
